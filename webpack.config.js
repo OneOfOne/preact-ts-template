@@ -16,36 +16,39 @@ const babelTransformImports = {
 	},
 },
 
-babelLoader = {
+tsLoader = {
 	test: /\.tsx?$/i,
 	exclude: /node_modules/,
-	use: {
-		loader: 'babel-loader',
-		options: {
-			babelrc: false,
-			cacheDirectory: '/tmp/.babel-cache',
-			presets: [
-				[
-					'@babel/env',
-					{
-						targets: { browsers: 'last 2 versions', ie: 11, android: 6 },
-						exclude: ['transform-regenerator', 'transform-async-to-generator', 'proposal-async-generator-functions'],
-						useBuiltIns: 'usage',
-						loose: true,
-						modules: false,
-					// debug: true,
-					},
+	use: [
+		{
+			loader: 'babel-loader',
+			options: {
+				babelrc: false,
+				cacheDirectory: '/tmp/.babel-cache',
+				presets: [
+					[
+						'@babel/env',
+						{
+							targets: { browsers: 'last 2 versions', ie: 11, android: 6 },
+							exclude: ['transform-regenerator', 'transform-async-to-generator', 'proposal-async-generator-functions'],
+							useBuiltIns: 'usage',
+							loose: true,
+							modules: false,
+						// debug: true,
+						},
+					],
+					['@babel/react', { loose: true }],
+					['@babel/typescript', { loose: true, jsxPragma: 'h' }],
 				],
-				['@babel/react', { loose: true }],
-				['@babel/typescript', { loose: true }],
-			],
-			plugins: [
-				['transform-imports', babelTransformImports],
-				['module:fast-async', { 'useRuntimeModule': true }],
-				'@babel/transform-runtime',
-			],
+				plugins: [
+					['transform-imports', babelTransformImports],
+					['module:fast-async', { 'useRuntimeModule': true }],
+					'@babel/transform-runtime',
+				],
+			},
 		},
-	},
+		{ loader: 'ts-loader'},
+	],
 };
 
 module.exports = (env, argv) => {
@@ -79,7 +82,7 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [
 				{ enforce: 'pre', test: /\.[tj]sx?$/, use: 'source-map-loader' },
-				babelLoader,
+				tsLoader,
 			]
 		},
 

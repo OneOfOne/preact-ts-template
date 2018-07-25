@@ -5,6 +5,12 @@
 	"repository": "https://github.com/OneOfoNe/preact-ts-template",
 	"author": "OneOfOne (OneOfOne@gmail.com)",
 	"license": "MIT",
+	"scripts": {
+		"preinstall": "npx use-yarn",
+		"watch": "webpack-dev-server --hot --open",
+		"prod": "env NODE_ENV=production webpack --mode=production --progress",
+		"dev": "webpack --mode=development --progress"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.0.0-beta.44",
 		"@babel/core": "^7.0.0-beta.44",
@@ -17,12 +23,12 @@
 		"@babel/polyfill": "^7.0.0-beta.46",
 		"@babel/preset-env": "^7.0.0-beta.44",
 		"@babel/preset-react": "^7.0.0-beta.46",
-		"@babel/preset-typescript": "^7.0.0-beta.46",
 		"@babel/runtime": "^7.0.0-beta.46",
 		"babel-loader": "^8.0.0-beta.0",
 		"babel-plugin-transform-imports": "^1.5.0",
 		"fast-async": "7",
 		"source-map-loader": "^0.2.3",
+		"ts-loader": "^4.4.2",
 		"typescript": "^2.9.2",
 		"webpack": "^4.16.2",
 		"webpack-cli": "^3.1.0",
