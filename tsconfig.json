@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+
+		"jsx": "react",
+
+		"sourceMap": true,
+
+		"removeComments": true,
+
+		"strict": true,
+
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+
+		"jsxFactory": "h"
+	},
+
+	"include": ["./src/**/*.tsx", "./src/**/*.ts"]
+}

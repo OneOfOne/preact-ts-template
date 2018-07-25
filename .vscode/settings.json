@@ -1,0 +1,15 @@
+{
+	"eslint.enable": false,
+	"eslint.packageManager": "yarn",
+	"eslint.provideLintTask": true,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+	"eslint.autoFixOnSave": true,
+	"eslint.run": "onSave",
+
+	"prettier.bracketSpacing": false,
+	"prettier.jsonEnable": ["jsonc", "json"],
+	"prettier.javascriptEnable": [],
+	"prettier.typescriptEnable": [],
+	"prettier.statusBar": false,
+	"prettier.openOutput": false,
+}
