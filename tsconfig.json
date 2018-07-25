@@ -2,21 +2,30 @@
 	"compilerOptions": {
 		"target": "esnext",
 		"module": "esnext",
-
-		"jsx": "react",
+		"moduleResolution": "node",
 
 		"sourceMap": true,
 
 		"removeComments": true,
 
 		"strict": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"noEmitHelpers": true,
+
+		"pretty": true,
 
 		"noImplicitThis": true,
-		"alwaysStrict": true,
+		"noImplicitReturns": true,
+		"noStrictGenericChecks": true,
+		"noUnusedLocals": true,
 
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
 
+		"jsx": "react",
 		"jsxFactory": "h"
 	},
 

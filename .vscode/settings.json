@@ -1,10 +1,9 @@
 {
+
+	"tslint.enable": true,
+	"tslint.packageManager": "yarn",
+
 	"eslint.enable": false,
-	"eslint.packageManager": "yarn",
-	"eslint.provideLintTask": true,
-	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-	"eslint.autoFixOnSave": true,
-	"eslint.run": "onSave",
 
 	"prettier.bracketSpacing": false,
 	"prettier.jsonEnable": ["jsonc", "json"],
